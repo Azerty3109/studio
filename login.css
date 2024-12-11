@@ -1,0 +1,271 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #4f3f35; /* Solid background color */
+  padding: 10px 20px;
+  position: sticky; /* Sticky positioning to avoid top overlap issues */
+  top: 0; /* Sticks to the top */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between; /* Pushes items apart */
+}
+
+.logo img {
+  height: 40px;
+  vertical-align: middle;
+  margin-left: 20px; /* Adjusts the spacing from the left edge */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-right: 20px; /* Adds spacing from the right edge */
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: black; /* Hover effect */
+}
+
+.profile-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 20px; /* Adds spacing on the right of the profile icon */
+}
+
+/* Login Form */
+.login {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #4f3f35;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 80px auto;
+  position: relative;
+}
+
+.header {
+  position: relative;
+  height: 70px; /* Adjust height to fit the overlay text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(79, 63, 53, 0.8); /* Semi-transparent background */
+  border-radius: 8px;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(79, 63, 53, 0.8); /* Overlay background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-overlay h1 {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: #4f3f35;
+  margin: 10px 0 20px;
+}
+
+.details-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group input,
+input {
+  width: 100%;
+  max-width: calc(50% - 7.5px); 
+  padding: 10px;
+  border: 2px solid #4f3f35;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #4f3f35;
+}
+
+input::placeholder {
+  color: #4f3f35;
+}
+
+input:not(.form-group input) {
+  max-width: 100%; 
+}
+
+.register-text {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #4f3f35;
+}
+
+.register-text a {
+  color: #4f3f35;
+  text-decoration: underline;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.register-text a:hover {
+  color: #000;
+}
+
+/* Submit Button */
+.login-button {
+  background-color: #4f3f35; 
+  color: white; 
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 30px; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%; 
+}
+
+.login-button:hover {
+  background-color: #3c2e26; 
+  transform: scale(1.02); 
+}
+
+.login-button:active {
+  transform: scale(0.98); 
+}
+
+/* Password Container */
+.password-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-container input {
+  flex: 1;
+  padding-right: 50px; 
+}
+
+.show-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #4f3f35;
+  font-size: 18px; /* Icon size */
+  transition: color 0.3s ease;
+}
+
+.show-password:hover {
+  color: black;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  /* Adjust for smaller screens (tablets and mobile) */
+  .login {
+      margin-left: 20px;
+      margin-top: 20px;
+  }
+
+  .header-overlay h1 {
+      font-size: 20px;
+  }
+
+  .nav-links {
+      gap: 15px; /* Reduces space between navigation items */
+  }
+
+  .logo img {
+      height: 30px; /* Smaller logo size for smaller screens */
+  }
+
+  .password-container input {
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust for mobile screens */
+  .login {
+      width: 90%; /* More flexible login form */
+      margin: 40px auto;
+  }
+
+  .header-overlay h1 {
+      font-size: 18px; /* Further reduce font size */
+  }
+
+  .form-group input {
+      max-width: 100%; /* Stack form inputs */
+  }
+
+  footer {
+      padding: 20px 10px; /* Adjusts padding for smaller screens */
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #3c2e26;
+  text-align: center;
+  color: white;
+  padding: 30px 20px;
+  margin-top: 300px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+  
